@@ -1,6 +1,6 @@
 /* globals waitForSelector, $ */
 // ==UserScript==
-// @name         New Userscript
+// @name         Discord Custom Menu
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
@@ -13,6 +13,8 @@
 // ==/UserScript==
 
 window.waitForSelector = waitForSelector;
+/** @type {(string) => Promise<HTMLElement>} */
+const waitForElem = waitForSelector;
 
 (function() {
     'use strict';
@@ -24,7 +26,7 @@ window.waitForSelector = waitForSelector;
 $(async () => {
   console.log('Monkey here');
 
-  const sidebar = await waitForSelector('[class*="sidebar"]');
+  const sidebar = await waitForElem('[class*="sidebar"]');
 
   const hideSidebarButton = document.createElement('div');
   hideSidebarButton.id = "nnryscript";
