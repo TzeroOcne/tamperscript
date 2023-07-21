@@ -1,25 +1,33 @@
-/* globals waitForSelector */
+/* globals waitForSelector, $ */
 // ==UserScript==
-// @name         Discord Menu
+// @name         New Userscript
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
+// @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://discord.com/channels/558322816416743459/732948529030365184
+// @match        https://discord.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
-// @grant        none
 // @require      https://cdn.jsdelivr.net/npm/waitforselector-js@0.1.0/index.min.js
+// @require      https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
+// @grant        none
 // ==/UserScript==
 
-/** @type {(string) => Promise<Element>} */
-const waitForSelector = waitForSelector;
+window.waitForSelector = waitForSelector;
 
-document.onload = async () => {
-  console.log('Document loaded');
-  /** @type {HTMLElement} */
+(function() {
+    'use strict';
+
+    // Your code here...
+    console.log('Using strict');
+})();
+
+$(async () => {
+  console.log('Monkey here');
+
   const sidebar = await waitForSelector('[class*="sidebar"]');
 
   const hideSidebarButton = document.createElement('div');
   hideSidebarButton.id = "nnryscript";
   sidebar.appendChild(hideSidebarButton);
-};
+});
+
