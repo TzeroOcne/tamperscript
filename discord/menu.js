@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name         Discord Menu
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.0.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://discord.com/channels/558322816416743459/732948529030365184
