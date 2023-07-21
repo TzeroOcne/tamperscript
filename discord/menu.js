@@ -18,4 +18,5 @@ const waitForSelector = waitForSelector;
 const sidebar = waitForSelector('[class*="sidebar"]');
 
 const hideSidebarButton = document.createElement('div');
+hideSidebarButton.id = "nnryscript";
 sidebar.appendChild(hideSidebarButton);
