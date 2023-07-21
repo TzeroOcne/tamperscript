@@ -14,9 +14,12 @@
 /** @type {(string) => Promise<Element>} */
 const waitForSelector = waitForSelector;
 
-/** @type {HTMLElement} */
-const sidebar = waitForSelector('[class*="sidebar"]');
+document.onload = async () => {
+  console.log('Document loaded');
+  /** @type {HTMLElement} */
+  const sidebar = await waitForSelector('[class*="sidebar"]');
 
-const hideSidebarButton = document.createElement('div');
-hideSidebarButton.id = "nnryscript";
-sidebar.appendChild(hideSidebarButton);
+  const hideSidebarButton = document.createElement('div');
+  hideSidebarButton.id = "nnryscript";
+  sidebar.appendChild(hideSidebarButton);
+};
